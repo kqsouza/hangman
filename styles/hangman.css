@@ -3,19 +3,34 @@ Bg-color #1: #F4F9F9;
 Font-color #1: #212A3E;
 */
 
+body{
+    height: 100vh;
+}
+
 #app{
     /*background-image: url("../image/background-game.jpg");*/
     /*background-color: #F6F8FF;*/
-
+    background-color: #000000;
+    height: 100%;
+    padding-top: 5%;
 }
 
 .hangman-nav{
-    font-family: 'Staatliches', 'Vina Sans', cursive;
-    color: #212A3E;
+    /*font-family: 'Staatliches', 'Vina Sans', cursive;*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*color: #212A3E;*/
+    color: mintcream;
+    text-align: center;
+    margin-bottom: 6%;
 }
 
 .hangman-nav h2{
+    display: inline-block;
     margin-bottom: 0;
+    letter-spacing: 0.5em;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 
@@ -39,12 +54,12 @@ Font-color #1: #212A3E;
 }
 
 
-.bdr-rd{
+.bdr-bk{
     border: 1px solid black;
 }
 
-.bgr-grey{
-    background-color: #F4F9F9;
+.bdr-or{
+    border: 1px solid orangered;
 }
 
 .content-game .row{
