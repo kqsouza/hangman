@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+<h1>Hello</h1>
+<button onclick="changeName()">Mude o titulo</button>
+    
+    <script>
+
+        let element = document.querySelector("h1");
+
+        function changeName(){
+
+            if (element.innerHTML == "Hello"){
+                element.innerHTML = "Goodbye !";
+            } else {
+                element.innerHTML = "Hello";
+            }
+        }
+    </script>
+
+</body>
+</html>

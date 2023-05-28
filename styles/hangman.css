@@ -1,0 +1,86 @@
+/*
+Bg-color #1: #F4F9F9;
+Font-color #1: #212A3E;
+*/
+
+#app{
+    /*background-image: url("../image/background-game.jpg");*/
+    /*background-color: #F6F8FF;*/
+
+}
+
+.hangman-nav{
+    font-family: 'Staatliches', 'Vina Sans', cursive;
+    color: #212A3E;
+}
+
+.hangman-nav h2{
+    margin-bottom: 0;
+}
+
+
+.role{
+    position: relative;
+    top: 38%;
+    left: 55%;
+}
+
+.guess-panel{   
+    font-family: 'Staatliches', 'Vina Sans', cursive;
+    font-size: 60px;
+    padding-top: 20px;
+}
+
+.inner-guess-panel{
+    margin: 0 auto;
+    margin-top: auto;
+    text-align: center;
+    letter-spacing: 13px;
+}
+
+
+.bdr-rd{
+    border: 1px solid black;
+}
+
+.bgr-grey{
+    background-color: #F4F9F9;
+}
+
+.content-game .row{
+    height: 50vh;
+}
+
+/*Estilização dos Botões*/
+
+.game-btn{
+    /*background-color: rgb(111, 111, 189);*/
+    color: white;
+    padding: 15px 25px;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: bold;
+    border: 1px solid rgba(0,0,0,0.21);
+    border-bottom-color: rgba(0,0,0,0.34);
+    text-shadow:1px 2px 0 rgba(0,0,0,0.15);
+    box-shadow: 0 1px 0 rgba(255,255,255,0.34) inset, 
+				      0 2px 0 -1px rgba(0,0,0,0.13), 
+				      0 3px 0 -1px rgba(0,0,0,0.08), 
+				      0 3px 13px -1px rgba(0,0,0,0.21);
+}
+
+.game-btn.mini{
+    padding: 4px 12px;  
+    font-size: 12px;
+}
+
+.game-btn.letter{
+    padding: 5px 10px 5px 10px;
+}
+
+.game-btn:active {
+    position: relative;
+	top: 1px;
+	border-color: rgba(0,0,0,0.34) rgba(0,0,0,0.21) rgba(0,0,0,0.21);
+	box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;	
+}
