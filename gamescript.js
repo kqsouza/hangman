@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function () {
   let arr = [];
   let pai = document.querySelector(".guess-word");
   let indexes = [];
-  let isRunning;
 
   function getLetraEscolhida() {
     return letraEscolhida;
@@ -71,25 +70,20 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   document.querySelector("#play").addEventListener("click", function () {
+    let a = document.querySelectorAll(".gm-btn");
+    a.forEach(function (element) {
+      element.classList.remove("disabled");
+    });
+
     let nrLetras = contaLetra(palavraAdivinha);
     desenhaTraco2(nrLetras);
     console.log("play");
-    isRunning = true;
   });
-
+  /*
   document.querySelector("#stop").addEventListener("click", function () {
     console.log("stop");
     isRunning = false;
   });
-
-  function main() {
-    if (isRunning == true) {
-      //Gerar uma palavra de um tema aleatório;
-
-      let nrLetras = contaLetra(palavraAdivinha);
-      desenhaTraco2(nrLetras);
-    }
-  }
-
+*/
   //setInterval(main, 5000);
 });

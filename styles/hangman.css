@@ -81,6 +81,7 @@ body{
 
 /*Estilização dos Botões*/
 
+/*Início desativado*/
 .game-btn{
     /*background-color: rgb(111, 111, 189);*/
     color: white;
@@ -113,7 +114,9 @@ body{
 	box-shadow: 0 1px 0 rgba(255,255,255,0.89),0 1px rgba(0,0,0,0.05) inset;	
 }
 
-.gm-btn {
+/*Fim desativado*/
+
+.gm-btn{
     color: rgba(0,0,0,0.7);
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     padding: 10px 17px;
@@ -145,4 +148,16 @@ body{
     height: 120px;
     border: 1px solid blueviolet;
 
+}
+
+.controllers{
+    border: 1px solid white;
+    color: white;
+    font-size: 2.7em;
+}
+
+.disabled{
+    pointer-events: none;
+    border: 2px solid crimson;
+    background-color: crimson;
 }
