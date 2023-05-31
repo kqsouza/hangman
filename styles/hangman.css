@@ -5,6 +5,7 @@ Font-color #1: #212A3E;
 
 :root{
     --button-color: #DDDDDD;
+    --correct-color: #122c82;
 }
 
 body{
@@ -160,4 +161,18 @@ body{
     pointer-events: none;
     border: 2px solid crimson;
     background-color: crimson;
+}
+
+.correct {
+    pointer-events: none;
+    border: 2px solid var(--correct-color);
+    background-color: black;
+    color: white;
+}
+
+.incorrect {
+    pointer-events: none;
+    border: 2px solid crimson;
+    background-color: black;
+    color: crimson;
 }

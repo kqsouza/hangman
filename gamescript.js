@@ -41,11 +41,18 @@ document.addEventListener("DOMContentLoaded", function () {
   / Caso positivo, adiciona no array indexes
   / a posição desta(s), podendo ser uma ou mais posições */
   function checkLetra(letraEscolhida) {
+    let checked = false;
     for (let i = 0; i < palavraAdivinha.length; i++) {
       if (palavraAdivinha[i] == letraEscolhida) {
         indexes.push(i);
+        document.getElementById(letraEscolhida).classList.add("correct");
+        checked = true;
       }
     }
+    if (checked == false) {
+      document.getElementById(letraEscolhida).classList.add("incorrect");
+    }
+    checked = false;
     console.log(indexes);
   }
 
@@ -64,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //Captura qual letra foi clicada
   document.querySelector("#keys").addEventListener("submit", function (item) {
     setLetraEscolhida(item.submitter.value);
+    console.log(item);
     console.log(getLetraEscolhida());
     checkLetra(getLetraEscolhida());
     revelarLetra();
