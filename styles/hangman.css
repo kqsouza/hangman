@@ -16,8 +16,7 @@ body{
     /*background-image: url("../image/background-game.jpg");*/
     /*background-color: #F6F8FF;*/
     background-color: #000000;
-    height: 100%;
-    padding-top: 5%;
+    padding-top: 1%;
 }
 
 .hangman-nav{
@@ -36,6 +35,12 @@ body{
     font-size: 1.3em;
     text-transform: uppercase;
     font-weight: 500;
+}
+
+.hangman-nav img{
+    width: 70px;
+    height: 110px;
+    margin-right: 1.2em;
 }
 
 .content-game{
@@ -176,3 +181,19 @@ body{
     background-color: black;
     color: crimson;
 }
+
+.history-letters{
+    color: white;
+    letter-spacing: 5px;
+}
+
+.figure-container {
+    fill: transparent;
+    stroke: #a7c2da;
+    stroke-width: 4px;
+    stroke-linecap: round;
+  }
+  
+  .figure-part {
+    display: none;
+  }

@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let arr = [];
   let pai = document.querySelector(".guess-word");
   let indexes = [];
+  let bodyparties = document.querySelectorAll(".figure-part");
+  let errorscount = 0;
 
   function getLetraEscolhida() {
     return letraEscolhida;
@@ -18,16 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
     return palavra.length;
   }
 
-  //Função para desenhar na tela traços de acordo com o tmh da letra
-  /*function desenhaTraco(qtd) {
-    let pai = document.querySelector(".guess-word");
-
-    for (let i = 0; i < qtd; i++) {
-      pai.append(document.createTextNode("_"));
-    }
-  }*/
-
-  //Função para desenhar na tela traços, append em array com posicionamento.
+  //Função para desenhar na tela traços, de acordo com o tamanho da palavra.
   function desenhaTraco2(qtd) {
     if (arr == "") {
       for (let i = 0; i < qtd; i++) {
@@ -51,7 +44,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     if (checked == false) {
       document.getElementById(letraEscolhida).classList.add("incorrect");
+      errorscount = errorscount + 1;
+      document.querySelector(".history-letters").append(letraEscolhida);
+
+      for (let i = 0; i < errorscount; i++) {
+        bodyparties[i].style.display = "block";
+      }
     }
+
     checked = false;
     console.log(indexes);
   }
@@ -87,11 +87,4 @@ document.addEventListener("DOMContentLoaded", function () {
     desenhaTraco2(nrLetras);
     console.log("play");
   });
-  /*
-  document.querySelector("#stop").addEventListener("click", function () {
-    console.log("stop");
-    isRunning = false;
-  });
-*/
-  //setInterval(main, 5000);
 });
