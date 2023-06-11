@@ -29,50 +29,38 @@
             <h2>Hangman</h2>
         </div>
 
-        <div class="content-game">
-            <div class="row">
-                <div class="col-md-6">
-            <div class="doll-game">
-                <svg height="250" width="200" class="figure-container">
-                    <!-- rod -->
-                    <line x1="60" y1="20" x2="140" y2="20" />
-                    <line x1="140" y1="20" x2="140" y2="50" />
-                    <line x1="60" y1="20" x2="60" y2="230" />
-                    <line x1="20" y1="230" x2="100" y2="230" />
-                    <!-- head -->
-                    <circle cx="140" cy="70" r="20" class="figure-part" />
-                    <!-- body -->
-                    <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
-                    <!-- arms -->
-                    <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
-                    <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
-                    <!-- legs -->
-                    <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
-                    <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
-                  </svg>
-            </div>
-        </div>
-        <div class="col-md-6 instructions">
-            <h5><i class="fa-sharp fa-regular fa-circle-small"></i>O jogo</h5>
-            <p>O "Hangman" é um jogo em que o jogador deve acertar qual é a palavra proposta, tendo como dica o número de letras e o tema ligado à palavra.
-               E isso deve ocorrer antes que o boneco esteja completo.</p>
-               <h5><i class="fa-sharp fa-regular fa-circle-small"></i>Como jogar</h5>
-
-
-            <div class="history-letters"></div>
-        </div>
-        </div>
-            <div class="guess-panel bdr-or">
-                <div class="inner-guess-panel">
-                    <p class="guess-word"></p>
-                </div>
-            </div>
-
+        <div class="content-game">   
             <div class="controllers">
                 <a href="#" id="play"><i class="fa-solid fa-circle-play"></i></a>
                 <i class="fa-sharp fa-solid fa-circle-stop"></i>
             </div>
 
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="doll-game">
+                        <svg height="250" width="200" class="figure-container">
+                            <!-- rod -->
+                            <line x1="60" y1="20" x2="140" y2="20" />
+                            <line x1="140" y1="20" x2="140" y2="50" />
+                            <line x1="60" y1="20" x2="60" y2="230" />
+                            <line x1="20" y1="230" x2="100" y2="230" />
+                            <!-- head -->
+                            <circle cx="140" cy="70" r="20" class="figure-part" />
+                            <!-- body -->
+                            <line x1="140" y1="90" x2="140" y2="150" class="figure-part" />
+                            <!-- arms -->
+                            <line x1="140" y1="120" x2="120" y2="100" class="figure-part" />
+                            <line x1="140" y1="120" x2="160" y2="100" class="figure-part" />
+                            <!-- legs -->
+                            <line x1="140" y1="150" x2="120" y2="180" class="figure-part" />
+                            <line x1="140" y1="150" x2="160" y2="180" class="figure-part" />
+                        </svg>
+                    </div>
+                    <div class="history-letters"></div>
+                    <h5 class="errors">Erros:</h5>
+                    <p class="errorsp">0</p>
+                </div>
+        <div class="col-md-6 keyboard">
             <form action="#" id="keys">
                 <input class="gm-btn disabled" type="submit" value="Q" id="Q" tabindex="-1">
                 <input class="gm-btn disabled" type="submit" value="W" id="W" tabindex="-1">
@@ -103,47 +91,16 @@
                 <input class="gm-btn disabled" type="submit" value="N" id="N" tabindex="-1">
                 <input class="gm-btn disabled" type="submit" value="M" id="M" tabindex="-1">
             </form>
-                <!--
-                <div class="row">
-                    <div class="col-md-6" >
-                        <!--<img class="role" src="image/rope.png" style="height: 22%; ">-->
-                        <!--
-                    </div>
-                    <div class="col-md-6" style="border: 1px solid blue;">
-                        <!--<button class="btn btn-primary" id="play">Play</button>
-                        <button class="btn btn-danger" id="stop">Stop</button>-->
-                        <!--
-                        <form action="#" id="keys">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="A" id="A">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="B" id="B">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="C" id="C">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="D" id="D">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="E" id="E">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="F" id="F">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="G" id="G">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="H" id="H">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="I" id="I">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="J" id="J">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="K" id="K">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="L" id="L">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="M" id="M">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="N" id="N">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="O" id="O">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="P" id="P">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="Q" id="Q">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="R" id="R">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="S" id="S">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="T" id="T">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="U" id="U">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="V" id="V">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="W" id="W">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="X" id="X">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="Y" id="Y">
-                            <input class="btn btn-primary game-btn letter" type="submit" value="Z" id="Z">
-                        </form><br />
-                        <button class="game-btn letter btn btn-primary">A</button>
-                    </div>
-                -->
+        </div>
+        </div>
+            <h5>Adivinhe a palavra</h5>
+            <div class="guess-panel">
+                <div class="inner-guess-panel">
+                    <p class="guess-word"></p>
+                </div>
+            </div>
+
+                
                 </div>
 
             </div>

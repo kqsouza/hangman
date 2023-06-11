@@ -10,13 +10,14 @@ Font-color #1: #212A3E;
 
 body{
     height: 100vh;
+    background-color: #000000;
 }
 
 #app{
     /*background-image: url("../image/background-game.jpg");*/
     /*background-color: #F6F8FF;*/
-    background-color: #000000;
     padding-top: 1%;
+    height: 100%;
 }
 
 .hangman-nav{
@@ -51,9 +52,10 @@ body{
 }
 
 h5{
-    font-family: 'Raleway', "Questrial", "Kanit", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Raleway", "Questrial", "Kanit", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: mintcream;
-    font-weight: 700;
+    font-weight: 500;
+    letter-spacing: 3px;
 }
 
 .instructions{
@@ -155,9 +157,9 @@ h5{
 
 
 .controllers{
-
     color: white;
     font-size: 2.7em;
+    margin-bottom: 25px;
 }
 
 .disabled{
@@ -183,6 +185,7 @@ h5{
 .history-letters{
     color: white;
     letter-spacing: 5px;
+    margin-bottom: 5px;
 }
 
 .figure-container {
@@ -195,3 +198,22 @@ h5{
   .figure-part {
     display: none;
   }
+
+.keyboard{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.errors, .errorsp {
+    font-family: "Raleway", "Questrial", "Kanit", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: mintcream;
+    font-weight: 500;
+    letter-spacing: 3px;
+}
+
+.errorsp{
+    font-weight: 700;
+    color: crimson;
+    font-size: 20px;
+}

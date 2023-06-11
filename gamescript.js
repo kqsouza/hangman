@@ -6,6 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
   let indexes = [];
   let bodyparties = document.querySelectorAll(".figure-part");
   let errorscount = 0;
+  let errorsElement = document.querySelector(".errorsp");
+  // O jogador pode errar até 6, mais que 6 = game over;
 
   function getLetraEscolhida() {
     return letraEscolhida;
@@ -46,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function () {
       document.getElementById(letraEscolhida).classList.add("incorrect");
       errorscount = errorscount + 1;
       document.querySelector(".history-letters").append(letraEscolhida);
-
+      errorsElement.innerHTML = errorscount;
       for (let i = 0; i < errorscount; i++) {
         bodyparties[i].style.display = "block";
       }
