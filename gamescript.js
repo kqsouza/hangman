@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let errorscount = 0;
   let errorsElement = document.querySelector(".errorsp");
   // O jogador pode errar até 6, mais que 6 = game over;
+  // Adicionar essa condição;
 
   function getLetraEscolhida() {
     return letraEscolhida;
@@ -44,11 +45,17 @@ document.addEventListener("DOMContentLoaded", function () {
         checked = true;
       }
     }
+
     if (checked == false) {
       document.getElementById(letraEscolhida).classList.add("incorrect");
       errorscount = errorscount + 1;
       document.querySelector(".history-letters").append(letraEscolhida);
       errorsElement.innerHTML = errorscount;
+
+      if (errorscount > 6) {
+        console.log("Game over");
+      }
+
       for (let i = 0; i < errorscount; i++) {
         bodyparties[i].style.display = "block";
       }
@@ -79,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     revelarLetra();
   });
 
+  //Starta o game
   document.querySelector("#play").addEventListener("click", function () {
     let a = document.querySelectorAll(".gm-btn");
     a.forEach(function (element) {
