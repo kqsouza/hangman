@@ -26,7 +26,7 @@ body{
     /*color: #212A3E;*/
     color: mintcream;
     text-align: center;
-    margin-bottom: 4%;
+    margin-bottom: 2%;
 }
 
 .hangman-nav h2{
@@ -155,7 +155,6 @@ h5, .message{
     transition: all 0s;
 }
 
-
 .controllers{
     color: white;
     font-size: 2.4em;
@@ -163,8 +162,13 @@ h5, .message{
 }
 
 .controllers a{
-    color: #00C4FF;
+    color: #5CB8E4;
 }
+
+.controllers a:hover{
+    color: #23aeee;
+}
+
 
 .disabled{
     pointer-events: none;
