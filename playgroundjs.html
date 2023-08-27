@@ -6,20 +6,15 @@
 </head>
 <body>
 
-<h1>Hello</h1>
-<button onclick="changeName()">Mude o titulo</button>
+<h1>0</h1>
+<button onclick="contar()">Contar</button>
     
     <script>
+        let counter = 0;
+        function contar(){
+            counter++
+            document.querySelector("h1").innerHTML = counter;
 
-        let element = document.querySelector("h1");
-
-        function changeName(){
-
-            if (element.innerHTML == "Hello"){
-                element.innerHTML = "Goodbye !";
-            } else {
-                element.innerHTML = "Hello";
-            }
         }
     </script>
 

@@ -51,7 +51,7 @@ body{
 
 }
 
-h5{
+h5, .message{
     font-family: "Raleway", "Questrial", "Kanit", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: mintcream;
     font-weight: 500;
@@ -158,8 +158,12 @@ h5{
 
 .controllers{
     color: white;
-    font-size: 2.7em;
+    font-size: 2.4em;
     margin-bottom: 25px;
+}
+
+.controllers a{
+    color: #00C4FF;
 }
 
 .disabled{
@@ -220,9 +224,26 @@ h5{
 
 .game-finish{
     position: absolute;
-    /*border: 1px solid yellow;*/
+    border: 1px solid yellow;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+}
+
+.container-finish{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 250px;
+    height: 250px;
+    border: 1px solid white;
+}
+
+.message {
+    background-color: white;
+    color: black;
 }

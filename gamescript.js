@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let bodyparties = document.querySelectorAll(".figure-part");
   let errorscount = 0;
   let errorsElement = document.querySelector(".errorsp");
+  let messageElement = document.querySelector(".message");
   // O jogador pode errar até 6, mais que 6 = game over;
   // Adicionar essa condição;
 
@@ -34,6 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* Verifica se letra existe em palavra a ser adivinhada:
+  
   / Caso positivo, adiciona no array indexes
   / a posição desta(s), podendo ser uma ou mais posições */
   function checkLetra(letraEscolhida) {
@@ -53,7 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
       errorsElement.innerHTML = errorscount;
 
       if (errorscount > 6) {
-        console.log("Game over");
+        messageElement.innerHTML = "Você perdeu :(";
+        resetGame();
       }
 
       for (let i = 0; i < errorscount; i++) {
@@ -97,4 +100,15 @@ document.addEventListener("DOMContentLoaded", function () {
     desenhaTraco2(nrLetras);
     console.log("play");
   });
+
+  //Reseta todo o jogo para o início
+  function resetGame() {
+    indexes = [];
+    arr = [];
+    palavraAdivinha = "";
+    let a = document.querySelectorAll(".gm-btn");
+    a.forEach(function (element) {
+      element.classList.add("disabled");
+    });
+  }
 });
