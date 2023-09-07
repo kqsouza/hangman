@@ -11,21 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // O jogador pode errar até 6, mais que 6 = game over;
   // Adicionar essa condição;
 
-  function getLetraEscolhida() {
-    return letraEscolhida;
-  }
-
-  function setLetraEscolhida(letra) {
-    letraEscolhida = letra;
-  }
-
-  //Função para contar quantas letras tem a palavra
-  function contaLetra(palavra) {
-    return palavra.length;
-  }
-
   //Função para desenhar na tela traços, de acordo com o tamanho da palavra.
-  function desenhaTraco2(qtd) {
+  function drawLines(qtd) {
     if (arr == "") {
       for (let i = 0; i < qtd; i++) {
         arr.push("_");
@@ -37,15 +24,24 @@ document.addEventListener("DOMContentLoaded", function () {
   /* Verifica se letra existe em palavra a ser adivinhada:
   
   / Caso positivo, adiciona no array indexes
-  / a posição desta(s), podendo ser uma ou mais posições */
+  / a posição desta(s), podendo ser uma ou mais posições 
+  / verificaar possível atualização
+  */
+
   function checkLetra(letraEscolhida) {
     let checked = false;
+
     for (let i = 0; i < palavraAdivinha.length; i++) {
       if (palavraAdivinha[i] == letraEscolhida) {
         indexes.push(i);
         document.getElementById(letraEscolhida).classList.add("correct");
         checked = true;
       }
+    }
+
+    if (indexes.length == palavraAdivinha.length) {
+      messageElement.innerHTML = "Você ganhou :D";
+      resetGame();
     }
 
     if (checked == false) {
@@ -80,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
     pai.innerHTML = arr.join("");
   }
 
+  /*
   //Captura qual letra foi clicada
   document.querySelector("#keys").addEventListener("submit", function (item) {
     setLetraEscolhida(item.submitter.value);
@@ -88,27 +85,50 @@ document.addEventListener("DOMContentLoaded", function () {
     checkLetra(getLetraEscolhida());
     revelarLetra();
   });
+  */
+
+  /********************************************************************************************************** */
+
+  document.querySelectorAll(".gm-btn").forEach(function (element) {
+    element.addEventListener("click", function () {
+      letraEscolhida = element.id;
+      console.log(letraEscolhida);
+      checkLetra(letraEscolhida);
+      revelarLetra();
+    });
+  });
 
   //Starta o game
   document.querySelector("#play").addEventListener("click", function () {
     let a = document.querySelectorAll(".gm-btn");
     a.forEach(function (element) {
       element.classList.remove("disabled");
+      element.classList.remove("end-game");
+      element.classList.remove("correct");
+      element.classList.remove("incorrect");
     });
-
-    let nrLetras = contaLetra(palavraAdivinha);
-    desenhaTraco2(nrLetras);
+    messageElement.innerHTML = "";
+    indexes = [];
+    arr = [];
+    palavraAdivinha = "CASA";
+    errorscount = 0;
+    errorsElement.innerHTML = "0";
+    bodyparties[0].style.display = "none";
+    bodyparties[1].style.display = "none";
+    bodyparties[2].style.display = "none";
+    bodyparties[3].style.display = "none";
+    bodyparties[4].style.display = "none";
+    bodyparties[5].style.display = "none";
+    document.querySelector(".history-letters").innerHTML = "";
     console.log("play");
+    drawLines(palavraAdivinha.length);
   });
 
   //Reseta todo o jogo para o início
   function resetGame() {
-    indexes = [];
-    arr = [];
-    palavraAdivinha = "";
     let a = document.querySelectorAll(".gm-btn");
     a.forEach(function (element) {
-      element.classList.add("disabled");
+      element.classList.add("end-game");
     });
   }
 });

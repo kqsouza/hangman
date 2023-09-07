@@ -176,6 +176,10 @@ h5, .message{
     background-color: crimson;
 }
 
+.end-game{
+    pointer-events: none;
+}
+
 .correct {
     pointer-events: none;
     border: 2px solid var(--correct-color);
