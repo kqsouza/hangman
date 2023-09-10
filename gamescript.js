@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
+  //let myChance = new Chance();
+  //console.log(myChance.first({ gender: "female" }));
   let letraEscolhida;
-  let palavraAdivinha = "CASA";
+  let palavraAdivinha = myChance.first({ gender: "female" });
   let arr = [];
   let pai = document.querySelector(".guess-word");
   let indexes = [];
@@ -98,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  //Starta o game
+  //Start o game
   document.querySelector("#play").addEventListener("click", function () {
     let a = document.querySelectorAll(".gm-btn");
     a.forEach(function (element) {
@@ -110,7 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
     messageElement.innerHTML = "";
     indexes = [];
     arr = [];
-    palavraAdivinha = "CASA";
+    //palavraAdivinha = myChance.first({ gender: "female" });
+    //palavraAdivinha = palavraAdivinha.toUpperCase();
     errorscount = 0;
     errorsElement.innerHTML = "0";
     bodyparties[0].style.display = "none";
@@ -120,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bodyparties[4].style.display = "none";
     bodyparties[5].style.display = "none";
     document.querySelector(".history-letters").innerHTML = "";
-    console.log("play");
+    console.log("play", palavraAdivinha);
     drawLines(palavraAdivinha.length);
   });
 

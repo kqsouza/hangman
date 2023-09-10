@@ -77,7 +77,7 @@ h5, .message{
 .guess-panel{   
     font-family: 'Staatliches', 'Vina Sans', cursive;
     font-size: 60px;
-    padding-top: 20px;
+    padding-top: 5px;
     margin-bottom: 10px;
     height: 106px;
 }
@@ -162,11 +162,11 @@ h5, .message{
 }
 
 .controllers a{
-    color: #5CB8E4;
+    color: #F6F1F1;
 }
 
 .controllers a:hover{
-    color: #23aeee;
+    color: #F3EFE0;
 }
 
 
