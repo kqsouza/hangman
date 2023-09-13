@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
   //let myChance = new Chance();
   //console.log(myChance.first({ gender: "female" }));
   let letraEscolhida;
-  let palavraAdivinha = myChance.first({ gender: "female" });
+  let palavraAdivinha = "";
   let arr = [];
   let pai = document.querySelector(".guess-word");
   let indexes = [];
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   //Start o game
-  document.querySelector("#play").addEventListener("click", function () {
+  document.querySelector("#play").addEventListener("click", async function () {
     let a = document.querySelectorAll(".gm-btn");
     a.forEach(function (element) {
       element.classList.remove("disabled");
@@ -114,6 +114,34 @@ document.addEventListener("DOMContentLoaded", function () {
     arr = [];
     //palavraAdivinha = myChance.first({ gender: "female" });
     //palavraAdivinha = palavraAdivinha.toUpperCase();
+
+    await fetch("https://api.openai.com/v1/completions", {
+      method: "POST",
+
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization:
+          "Bearer " + "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",
+      },
+
+      body: JSON.stringify({
+        model: "text-davinci-003",
+        prompt:
+          "Me diga uma palavra aleatória da língua portuguesa, tudo em maiúsculo sem o ponto final.",
+        max_tokens: 2048,
+        temperature: 0.5,
+      }),
+    })
+      .then((resposta) => resposta.json())
+      .then((dados) => {
+        console.log(dados);
+        palavraAdivinha = dados.choices[0].text;
+      })
+      .catch((erro) => {
+        console.log(erro);
+      });
+
     errorscount = 0;
     errorsElement.innerHTML = "0";
     bodyparties[0].style.display = "none";
@@ -123,6 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
     bodyparties[4].style.display = "none";
     bodyparties[5].style.display = "none";
     document.querySelector(".history-letters").innerHTML = "";
+    palavraAdivinha = palavraAdivinha.trim();
     console.log("play", palavraAdivinha);
     drawLines(palavraAdivinha.length);
   });
